@@ -22,7 +22,7 @@ RESULT_DIR_LAST = 'model1_result/model1_result_last/'
 
 # Network Parameters
 INPUT_SIZE = 160
-HIDDEN_SIZE = 128
+HIDDEN_SIZE = 128 
 NUM_LAYERS = 3
 
 class RNN(nn.Module):
