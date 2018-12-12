@@ -7,7 +7,6 @@ Created on Fri Nov 16 13:52:39 2018
 import matplotlib
 matplotlib.use('pdf')    
 import torch
-torch.backends.cudnn.enabled = False
 import torch.nn as nn
 import modelhelper
 
@@ -22,9 +21,11 @@ RESULT_DIR_LAST = 'model1_result/model1_result_last/'
 
 # Network Parameters
 INPUT_SIZE = 160
-HIDDEN_SIZE = 128 
+HIDDEN_SIZE = 128
 NUM_LAYERS = 3
-
+if (str(device) != "cpu"):
+    torch.set_default_tensor_type('torch.cuda.FloatTensor')
+        
 class RNN(nn.Module):
     def __init__(self):
         super(RNN, self).__init__()
@@ -66,6 +67,8 @@ def main():
         
     modelhelper.create_directories('model1')
     
+    print('================== Dataset is loading =====================')
+    
     trainloader, validationloader, test_loader =  modelhelper.divide_datasets(RUN_ON_SERVER, want_to_test)
     
     net = RNN()
@@ -76,6 +79,7 @@ def main():
             net.load_state_dict(torch.load(modelfilepath))
         else:
             net.load_state_dict(torch.load(modelfilepath, map_location='cpu'))
+        print('================== Testing has started =====================')
         modelhelper.compute_accuracy(net,test_loader, RUN_ON_SERVER, 'Last')
     else:
         bestnet, net = modelhelper.training(net, trainloader, validationloader, RUN_ON_SERVER)    
