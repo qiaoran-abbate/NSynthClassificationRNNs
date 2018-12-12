@@ -8,7 +8,6 @@ import os
 import matplotlib
 matplotlib.use('pdf')    
 import torch
-torch.backends.cudnn.enabled = False
 import copy 
 import numpy as np
 import torch.nn as nn
