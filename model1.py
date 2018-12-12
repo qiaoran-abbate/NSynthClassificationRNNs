@@ -29,14 +29,19 @@ if (str(device) != "cpu"):
 class RNN(nn.Module):
     def __init__(self):
         super(RNN, self).__init__()
-
-        self.rnn = nn.LSTM(         # if use nn.RNN(), it hardly learns
+        
+        # if use nn.RNN(), it hardly learns
+        self.rnn = nn.LSTM(         
             input_size=INPUT_SIZE,
-            hidden_size=HIDDEN_SIZE,         # rnn hidden unit
-            num_layers= NUM_LAYERS,           # number of rnn layer
-            batch_first=True,       # input & output will has batch size as 1s dimension. e.g. (batch, time_step, input_size)
+            # rnn hidden unit
+            hidden_size=HIDDEN_SIZE,   
+            # number of rnn layer
+            num_layers= NUM_LAYERS,
+            # input & output will has batch size as 1s dimension. 
+            # e.g. (batch, time_step, input_size)
+            batch_first=True,     
         )
-
+              
         self.out = nn.Linear(HIDDEN_SIZE, 10)
 
     def forward(self, x):
@@ -47,7 +52,8 @@ class RNN(nn.Module):
         h0 = torch.zeros(NUM_LAYERS, x.size(0), HIDDEN_SIZE).to(device)
         c0 = torch.zeros(NUM_LAYERS, x.size(0), HIDDEN_SIZE).to(device)
         
-        r_out, (h_n, h_c) = self.rnn(x, (h0,c0))   # None represents zero initial hidden state
+        # None represents zero initial hidden state
+        r_out, (h_n, h_c) = self.rnn(x, (h0,c0))   
 
         # choose r_out at the last time step
         out = self.out(r_out[:, -1, :])
