@@ -1,6 +1,5 @@
-README
 ---
-CONTENTS OF EACH FOLDER
+# CONTENTS OF EACH FOLDER
 
 ---
 net_model1.pth	 	 : Saved model parameters of model1.py
@@ -17,7 +16,7 @@ modelhelper.py	  	 : Helper .py file which contains all the common methods requi
 
 
 ---
-HOW TO RUN/TEST THE MODELS
+# HOW TO RUN/TEST THE MODELS
 
 python3 [model1.py]
 
