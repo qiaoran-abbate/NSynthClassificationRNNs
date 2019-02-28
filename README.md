@@ -69,6 +69,60 @@ This section contains the details regarding network architectures and hyperparam
   </tr>
 </table>
 
+# Result
+This section will discuss the training result with the aid of figures and descriptions. Similar to the training section, we will separately discuss the LSTM and BLSM in the following subsections.
+
+<table class="tg">
+  <tr>
+    <th class="tg-oud0"></th>
+    <th class="tg-35uj">LSTM</th>
+    <th class="tg-35uj">BLSTM</th>
+  </tr>
+  <tr>
+    <td class="tg-fymr" rowspan="2">Loss Over Epoch</td>
+    <td class="tg-0pky">IMG</td>
+    <td class="tg-0pky">IMG</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" colspan="2">Both LSTM and BLSTM started overfitting very quickly. Which is consistent with our findings in project 2. Which lead us to believe that a certain attribute within NSynth dataset makes it prone to overfitting. Strangely, we adopted the early dropping method, and realized that, even though the best model, at around epoch 2, should have better test accuracy than the last model. We found that the last models have better accuracy. So we are not sure if this is due to the way we visualized the validation loss. If the model is indeed overfitted, given the time, we would like to try and increase the batch size or adapt regularization techniques to improve it. Additionally, before settling on the 3-layer LSTM or BLSTM, we have tried using a 2-layer one. Surely, the 3-layer models have a slight increase in accuracy, at about 3%. Last but not least, we had experimented with both SGD and Adam optimizers for the models, and realized that Adam is much better in this case. It allows for a dynamic momentum in proportion to the gradient magnitude, thus descending closers to the local/global minima. This suggests that NSynth loss gradient have some steep “valleys".</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax">1-D Visualization</td>
+    <td class="tg-0lax" colspan="2">IMG</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">Confusion Matrix</td>
+    <td class="tg-0lax">IMG</td>
+    <td class="tg-0lax">IMG</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" colspan="2">The LSTM achieved a higher accuracy than BLSTM. LSTM is at 64.844%, while BLSTM is at 63.696%. LSTM classified class String, Organ, and Bass more correctly when compared to the other classes. As of BLSTM, it classified class Guitar and vocal more correctly when compared to the other classes. The differences between the rest of the classes classification are quite similar within the two models. Based on the figure above, we can see that Both models seem to have a bit of a problem classifying bass, flute, guitar, and keyboard. BLSTM did a little worse in the class keyboard. We presume that this is caused by the BLSTM learning wrong correlations between the end of a keyboard sample and the beginning of a bass sample (bluesummers, 2017), since both classes have a small fade-in and fade-out transition.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">Correct Class Low vs High P(x)</td>
+    <td class="tg-0lax">IMG</td>
+    <td class="tg-0lax">IMG</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" colspan="2">Note: if the above images are too small to view clearly, please see the original image in folder Test_Result.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">Incorrect Class Near vs. Far Decision Boundary</td>
+    <td class="tg-0lax">IMG</td>
+    <td class="tg-0lax">IMG</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" colspan="2">Note: if the above images are too small to view clearly, please see the original image in folder Test_Result.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" rowspan="2">Training and Testing Times</td>
+    <td class="tg-0lax">4 am to 5:53 pm - 13:53 hours</td>
+    <td class="tg-0lax">4 am to 8:56 pm - 16:56 hours</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax" colspan="2">Granted we weren’t able to use GPU to accelerate the training process, but our experience certainly shows that BLSTM takes a lot longer to train. Which make sense given its’ complexity.</td>
+  </tr>
+</table>
 
 # Discussion 
 
