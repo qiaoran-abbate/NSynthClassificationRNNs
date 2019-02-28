@@ -1,9 +1,9 @@
 # Steps to run/test the models: 
-* Intall Python, Pytorch, Numpy, and Matplotlib 
-* Git clone the NsynthClassificationRNNs Repository 
-* Navigate to the folder, in terminal or your prefered IDE, run model1.py | model2.py
-* Do you want to test the model? (1-Yes, 0-No): [Enter 1, to test the model. If 0, then the model will train]
-* Enter the model file path: [Give the .pth file path]
+1. Intall Python, Pytorch, Numpy, and Matplotlib 
+2. Git clone the NsynthClassificationRNNs Repository 
+3. Navigate to the folder, in terminal or your prefered IDE, run model1.py | model2.py
+4. Do you want to test the model? (1-Yes, 0-No): [Enter 1, to test the model. If 0, then the model will train]
+5. If you answered 1 to step4, enter the model file path: [Give the .pth file path]
 
 ---
 
