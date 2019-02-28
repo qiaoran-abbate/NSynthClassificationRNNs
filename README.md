@@ -69,7 +69,7 @@ This section will discuss the training result with the aid of figures and descri
   </tr>
   <tr>
     <td class="tg-0lax">1-D Visualization</td>
-    <td class="tg-0lax" colspan="2"><img src="https://github.com/qiaoranli/NSynthClassificationRNNs/blob/master/doc_images/5.png" alt="1D Music Note Visualization" width="800"></td>
+    <td class="tg-0lax" colspan="2"><img src="https://github.com/qiaoranli/NSynthClassificationRNNs/blob/master/doc_images/5.png" alt="1D Music Note Visualization" width="600"></td>
   </tr>
   <tr>
     <td class="tg-0lax" rowspan="2">Confusion Matrix</td>
