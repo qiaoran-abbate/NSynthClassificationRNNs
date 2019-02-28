@@ -45,6 +45,35 @@ This model uses a regular LSTM model which takes the first second of all NSynth 
 
 ## Training Setup
 This section contains the details regarding network architectures and hyperparameters used to achieve the best result. See the following table for comparison.
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-oud0{background-color:#dce8d5;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-35uj{font-weight:bold;background-color:#dce8d5;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-fymr{font-weight:bold;border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-oud0"></th>
+    <th class="tg-35uj">LSTM</th>
+    <th class="tg-35uj">BLSTM</th>
+  </tr>
+  <tr>
+    <td class="tg-fymr">Parameters used</td>
+    <td class="tg-0pky">LEARN_RATE = 0.0008<br>BATCH_SIZE = 32<br>EPOCHS = 20<br># Network Parameters<br>INPUT_SIZE = 160<br>HIDDEN_SIZE = 128<br>NUM_LAYERS = 3</td>
+    <td class="tg-0pky">LEARN_RATE = 0.0008<br>BATCH_SIZE = 32<br>EPOCHS = 20<br># Network Parameters<br>INPUT_SIZE = 160<br>HIDDEN_SIZE = 128<br>NUM_LAYERS = 3<br>bidirectional = True</td>
+  </tr>
+  <tr>
+    <td class="tg-fymr" rowspan="2">Network architecture</td>
+    <td class="tg-0pky">TEST1</td>
+    <td class="tg-0pky">TEST2</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky" colspan="2">The RNN network architectures shown above are heavily inspired by Zhou’s Pytorch Tutorial<br>sites (Zhou, 2018).</td>
+  </tr>
+</table>
 
 
 # Discussion 
