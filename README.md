@@ -61,8 +61,8 @@ This section will discuss the training result with the aid of figures and descri
   </tr>
   <tr>
     <td class="tg-fymr" rowspan="2">Loss Over Epoch</td>
-    <td class="tg-0pky"><img src="https://github.com/qiaoranli/NSynthClassificationRNNs/blob/master/doc_images/3.png" alt="Epochs for LSTM" width="400"></td>
-    <td class="tg-0pky"><img src="https://github.com/qiaoranli/NSynthClassificationRNNs/blob/master/doc_images/4.png" alt="Epochs for LSTM" width="400"></td>
+    <td class="tg-0pky"><img src="https://github.com/qiaoranli/NSynthClassificationRNNs/blob/master/doc_images/3.png" alt="Epochs for LSTM" width="300"></td>
+    <td class="tg-0pky"><img src="https://github.com/qiaoranli/NSynthClassificationRNNs/blob/master/doc_images/4.png" alt="Epochs for LSTM" width="300"></td>
   </tr>
   <tr>
     <td class="tg-0lax" colspan="2">Both LSTM and BLSTM started overfitting very quickly. Which is consistent with our findings in project 2. Which lead us to believe that a certain attribute within NSynth dataset makes it prone to overfitting. Strangely, we adopted the early dropping method, and realized that, even though the best model, at around epoch 2, should have better test accuracy than the last model. We found that the last models have better accuracy. So we are not sure if this is due to the way we visualized the validation loss. If the model is indeed overfitted, given the time, we would like to try and increase the batch size or adapt regularization techniques to improve it. Additionally, before settling on the 3-layer LSTM or BLSTM, we have tried using a 2-layer one. Surely, the 3-layer models have a slight increase in accuracy, at about 3%. Last but not least, we had experimented with both SGD and Adam optimizers for the models, and realized that Adam is much better in this case. It allows for a dynamic momentum in proportion to the gradient magnitude, thus descending closers to the local/global minima. This suggests that NSynth loss gradient have some steep “valleys".</td>
