@@ -59,8 +59,10 @@ This section contains the details regarding network architectures and hyperparam
   </tr>
   <tr>
     <td class="tg-fymr" rowspan="2">Network architecture</td>
-    <td class="tg-0pky">TEST1</td>
-    <td class="tg-0pky">TEST2</td>
+    <td class="tg-0pky">
+        <img src="https://github.com/qiaoranli/NSynthClassificationRNNs/blob/master/doc_images/1.png" alt="NN for LSTM" width="300">
+    </td>
+    <td class="tg-0pky"><img src="https://github.com/qiaoranli/NSynthClassificationRNNs/blob/master/doc_images/2.png" alt="NN for LSTM" width="300"></td>
   </tr>
   <tr>
     <td class="tg-0pky" colspan="2">The RNN network architectures shown above are heavily inspired by Zhou’s Pytorch Tutorial<br>sites (Zhou, 2018).</td>
