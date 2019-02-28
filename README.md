@@ -18,8 +18,7 @@ This model uses a regular LSTM model which takes the first second of all NSynth 
 # 
     Batch first = T
     Input(batch_size * sequence_length * input_size) = Input (32 * 100 * 160)
-#
-# 
+ 
     Batch first = F
     Input(sequence_length * batch_size * input_size) = Input(100 * 32 * 160)
 #
