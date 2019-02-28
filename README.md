@@ -47,4 +47,18 @@ This model uses a regular LSTM model which takes the first second of all NSynth 
 This section contains the details regarding network architectures and hyperparameters used to achieve the best result. See the following table for comparison.
 
 
+# Discussion 
 
+## What does the visualization tell us about the behavior of the LSTM and BLSTM classifiers, and their ability to discriminate between the instrument families?
+Both LSTM and BLSTM are able to classify instrument families with lesser variety pretty well, such as String, Vocal, and so on. However, they struggle with similar looking samples, such as keyboard and brass. BLSTM especially struggle with samples that might have a symmetrical shape. The keyboard class is one such example, since the ending of it looks similar, in some case, as the beginning of a bass sample.
+
+## How do the LSTM and BLSTM compare in terms of speed and accuracy compared to your best network from project1?
+BLSTM is a lot slower compared to LSTM, due to the additional complexity. BLSTM achieved 63.696%, which is about 1% less than LSTM, that achieved 64.844%. The different is not significant but does prove the point that in machine learning, or a less complicated model sometimes performs better than a complex model. The right fit is the key.
+
+## What in your RNN network designs seems to have led to the results obtained? How might they be changed to improve the results?
+Having an Adam optimizer in the gradient descent process definitely helped the model to learn better. Also, adding additional layers within the RNNs (from 2 layers to 3 layers) helped to improve the accuracy for about 3%. We read online that Tanh activation function is often used in RNNs, but adding it to the model did not change the result much. The loss over epoch figure does suggest that the model had overfitted, so given the opportunity, we’d like to adopt weight decay, bigger batch size to improve it. Also, having the entire 4 seconds as sample might yield a better result.
+
+## Additional Comments/Summary
+In this project, we had to first familiarize ourselves with the RNNs, and how to reshape the tensors to match the network. Then we tweaked the parameters to improve its accuracy. Notably, changing the optimizer for gradient descent from SGD to Adam made the biggest difference. Which can be explained by the fact that Adam optimizer allows for a dynamic momentum in proportion to the gradient magnitude. Hence, when a model had steep slopes, Adam optimizer helps the model to descend further into the valley, aka the local or global minima.
+
+Overall this project allowed us to have a better understanding of how RNNs such as LSTM and BLSTM work both theoretically and practically. When compared to project 1, the model did achieve a better accuracy. It theoretically makes sense since music notes are time-dependent data, naturally, RNNs should perform better. However, others have achieved similar or better accuracy in their convolutional models. It is possible that we haven’t explored all the best parameter to really optimize the LSTM or the BLSTM models. Not to mention, we are currently studying 1 second of the audio file rather than 4. In the future, we’d like to look at increasing the number of layers and incorporate more seconds of the music notes.
