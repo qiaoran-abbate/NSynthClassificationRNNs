@@ -45,15 +45,7 @@ This model uses a regular LSTM model which takes the first second of all NSynth 
 
 ## Training Setup
 This section contains the details regarding network architectures and hyperparameters used to achieve the best result. See the following table for comparison.
-<style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0;}
-.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
-.tg .tg-oud0{background-color:#dce8d5;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-35uj{font-weight:bold;background-color:#dce8d5;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-fymr{font-weight:bold;border-color:inherit;text-align:left;vertical-align:top}
-.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
-</style>
+
 <table class="tg">
   <tr>
     <th class="tg-oud0"></th>
