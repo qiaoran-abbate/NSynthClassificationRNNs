@@ -1,4 +1,4 @@
-# HOW TO RUN/TEST THE MODELS
+# Steps to run/test the models: 
 * Intall Python, Pytorch, Numpy, and Matplotlib 
 * Git clone the NsynthClassificationRNNs Repository 
 * Navigate to the folder, in terminal or your prefered IDE, run model1.py | model2.py
